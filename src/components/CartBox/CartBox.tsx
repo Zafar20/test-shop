@@ -7,7 +7,7 @@ import { cartStore } from "../../store/cartStore"
 
 const CartBox:FC = () => {
     
-    const { cart, totalPrice } = cartStore()
+    const { cart } = cartStore()
     
   return (
     <>
@@ -27,7 +27,7 @@ const CartBox:FC = () => {
                 <div className="cart__total">
                     <span className="cart__total-text">Итог</span>
                     <p className="cart__total-price">
-                        {totalPrice}
+                        0
                         <span>$</span>
                     </p>
                 </div>

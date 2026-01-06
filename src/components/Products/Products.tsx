@@ -66,12 +66,12 @@ const Products:FC = () => {
                 <Search/>
             </div>
             <div className="products__list">
-              {data ? data.results.map((product:IProduct) => (
+              {data && data.results.map((product:IProduct) => (
                 <ProductsItem
                   key={product.id}
                   product={product}
                 />
-              )) : skeletons }
+              )) }
             </div>
             {data &&  data.count > limit &&
               <Pagination

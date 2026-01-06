@@ -8,9 +8,7 @@
         gap: 10px;
     }
     li {
-        &.disabled {
-            display: none;
-        }
+       
         &.selected {
             a {
                 background: #fe724c;

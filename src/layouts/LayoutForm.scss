@@ -2,17 +2,14 @@
     display: flex;
     height: 100vh;
     &__left {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-right: 1px solid #d4d6e0;
+        width: 40%;
+       
         @media (max-width:1000px) {
             display: none;
         }
     }
     &__right {
-        width: 50%;
+        width: 60%;
         display: flex;
         justify-content: center;
         align-items: center;

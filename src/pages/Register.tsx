@@ -48,7 +48,7 @@ const Register:FC = () => {
                   type="text"
                   error={errors.username}
                   register={register('username', {
-                    required: 'Поле обязательное для заполнения',
+                    required: '',
                     minLength: {
                       value: 6,
                       message: 'Минимум 6 символов'
@@ -61,7 +61,7 @@ const Register:FC = () => {
                   type="email"
                   error={errors.email}
                   register={register('email', {
-                    required: 'Поле обязательное для заполнения',
+                    required: '',
                   })}
                 />
                 <CustomInput
@@ -70,7 +70,7 @@ const Register:FC = () => {
                   type="password"
                   error={errors.password}
                   register={register('password', {
-                    required: 'Поле обязательное для заполнения',
+                    required: '',
                     minLength: {
                       value: 8,
                       message: 'Минимум 8 символов'
@@ -83,7 +83,7 @@ const Register:FC = () => {
                   type="password"
                   error={errors.password2}
                   register={register('password2', {
-                    required: 'Поле обязательное для заполнения',
+                    required: '',
                     validate: (value) =>  value == password || 'Пароли не совпадают',
                     minLength: {
                       value: 8,

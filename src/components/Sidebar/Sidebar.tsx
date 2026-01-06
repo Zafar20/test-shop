@@ -10,33 +10,32 @@ import { cartStore } from "../../store/cartStore"
 
 
 const links = [
-    { url: '/', name: 'Меню', img: menuIcon },
-    { url: '/cart', name: 'Корзина', img: cartIcon },
-    { url: '/profile', name: 'Профиль', img: userIcon },
+    
+        { url: '/', name: 'Меню', img: menuIcon },
+        { url: '/cart', name: 'Корзина', img: cartIcon },
 ]
 
 const Sidebar: FC = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const { user, logoutUser } = userStore()
-    const { totalCount } = cartStore()
 
     const userImg = `https://prowebapi.tech/${user?.avatar}`
     const img = user && user.avatar ? userImg : userPhoto
-    
+
     const openModal = () => {
         setIsModalOpen(true)
     }
     const closeModal = () => {
         setIsModalOpen(false)
     }
-    
+
     const logout = () => {
         closeModal()
         logoutUser()
         window.location.href = "/login"
     }
- 
+
     return (
         <>
             <div className="sidebar">
@@ -58,7 +57,7 @@ const Sidebar: FC = () => {
                                         <NavLink to={link.url} className="sidebar__list-links">
                                             <img src={link.img} alt="" />
                                             <span className="sidebar__list-links-text">{link.name}</span>
-                                            {link.name == "Корзина" && totalCount > 0 && <span className="sidebar__list-links-count">{totalCount}</span> }
+                                            {link.name == "Корзина" && 0 >= 0 && <span className="sidebar__list-links-count">{0}</span>}
                                         </NavLink>
                                     </li>
                                 ))}
@@ -70,14 +69,13 @@ const Sidebar: FC = () => {
                             text="Выйти"
                             img={logoutIcon}
                             gap={9}
-                            click={openModal}
                             visible="exit"
                         />
                     </>
-                ) : <Skeleton/> }
+                ) : <Skeleton />}
 
             </div>
-            {isModalOpen && <Modal closeModal={closeModal} logout={logout}/>}
+            {isModalOpen && <Modal closeModal={closeModal} logout={logout} />}
         </>
     )
 }

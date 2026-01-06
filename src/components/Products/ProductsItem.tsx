@@ -29,7 +29,7 @@ const ProductsItem:FC<IProductsItem> = ({ product }) => {
     <Link to={`/product/${product.id}`} className="products__item">
         <img src={product.image} alt="" className="products__item-img" />
         <span className="products__item-price">{product.price} $</span>
-        <button className="products__item-cart" onClick={(event) => addToCartHandler(event)}>
+        <button className="products__item-cart">
             <img src={addCartIcon} alt="" />
         </button>
         <div className="products__item-info">

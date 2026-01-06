@@ -6,7 +6,7 @@ import { cartStore } from "../../store/cartStore"
 
 const CartItem:FC<ICartProduct> = ({ id, title, price, count, image }) => {
     
-    const { minusCount, addToCart, removeItem } = cartStore()
+
     
   return (
     <>
@@ -19,14 +19,14 @@ const CartItem:FC<ICartProduct> = ({ id, title, price, count, image }) => {
                 </div>
             </div>
             <div className="cart__item-right">
-                <button className="cart__item-right-minus" onClick={() => minusCount(id)}>
+                <button className="cart__item-right-minus" >
                     <img src={minusIcon} alt="" />
                 </button>
                 <span className="cart__item-right-count">{count}</span>
-                <button className="cart__item-right-plus" onClick={() => addToCart({id: id})}>
+                <button className="cart__item-right-plus">
                     <img src={plusIcon} alt="" />
                 </button>
-                <button className="cart__item-right-remove" onClick={() => removeItem(id)}>
+                <button className="cart__item-right-remove">
                     <img src={closeIcon} alt="" />
                 </button>
             </div>

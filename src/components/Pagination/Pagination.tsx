@@ -21,7 +21,7 @@ const Pagination:FC<IPagination> = ({ limit, currentPage, totalCount, onChangePa
         nextLabel=">"
         onPageChange={(event) => onChangePage(event.selected + 1)}
         pageRangeDisplayed={5}
-        pageCount={totalPage}
+        pageCount={10}
         previousLabel="<"
         renderOnZeroPageCount={null}
         forcePage={currentPage - 1}
