@@ -1,0 +1,42 @@
+.modal {
+    background: rgba(0, 0, 0, 0.30);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__block {
+        max-width: 500px;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        &-title {
+            font-size: 26px;
+            text-align: center;
+            font-family: var(--font-family);
+            margin-bottom: 40px;
+        }
+        &-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        &-button {
+            font-size: 18px;
+            background:#FE724C;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

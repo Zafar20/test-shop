@@ -1,0 +1,57 @@
+@import './fonts.scss';
+
+
+:root {
+    --font-family: 'OpenSans'
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+button,input {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.custom__button {
+    box-shadow: 0 10px 40px 0 rgba(122, 129, 190, 0.16);
+    background: #fe724c;
+    border-radius: 28px;
+    width: 100%;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;     
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    &.exit {
+        @media (max-width:600px) {
+            width: 40px;
+            height: 40px !important;
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+.container {
+    width: 80%;
+    padding: 40px 60px;
+    @media (max-width:1000px) {
+        width: 100%;
+        padding: 40px 15px;
+    }
+}
