@@ -19,6 +19,7 @@ const Sidebar: FC = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const { user, logoutUser } = userStore()
+    const { totalCount } = cartStore()
 
     const userImg = `https://prowebapi.tech/${user?.avatar}`
     const img = user && user.avatar ? userImg : userPhoto
@@ -57,7 +58,7 @@ const Sidebar: FC = () => {
                                         <NavLink to={link.url} className="sidebar__list-links">
                                             <img src={link.img} alt="" />
                                             <span className="sidebar__list-links-text">{link.name}</span>
-                                            {link.name == "Корзина" && 0 >= 0 && <span className="sidebar__list-links-count">{0}</span>}
+                                            {link.name == "Корзина" && totalCount >= 0 && <span className="sidebar__list-links-count">{totalCount}</span>}
                                         </NavLink>
                                     </li>
                                 ))}
