@@ -22,7 +22,7 @@ const Search:FC = () => {
   useEffect(() => {
     setValue(searchValue)
   }, [])
-  
+
   return (
     <>
       <form className="search" onSubmit={(event) => submit(event) }>
@@ -31,10 +31,8 @@ const Search:FC = () => {
             type="text" 
             className="search__box-input" 
             placeholder="Введите ..."
-            value={value}
-            onChange={(event) => setValue(event.target.value)}
           />
-           { value && <img onClick={reset} src={closeIcon} alt="" className="search__box-icon" /> }
+           <img onClick={reset} src={closeIcon} alt="" className="search__box-icon" />
         </div>
         <button className="search__box-btn">
           <img src={searchIcon} alt="" />

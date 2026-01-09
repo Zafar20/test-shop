@@ -47,7 +47,7 @@ const Login:FC = () => {
                   type="text"
                   error={errors.username}
                   register={register('username', {
-                    required: 'Поле обязательное для заполнения',
+                    required: '',
                     minLength: {
                       value: 6,
                       message: 'Минимум 6 символов'
@@ -60,7 +60,7 @@ const Login:FC = () => {
                   type="password"
                   error={errors.password}
                   register={register('password', {
-                    required: 'Поле обязательное для заполнения',
+                    required: '',
                     minLength: {
                       value: 8,
                       message: 'Минимум 8 символов'
