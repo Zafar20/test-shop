@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# В нашем проекте используются следующие ветки Git:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+main
 
-Currently, two official plugins are available:
+Готовая ветка полноценного проекта.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Все функции полностью протестированы и не содержат критических багов.
 
-## React Compiler
+Используется для релизов и деплоя на продакшн.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Никакая разработка в main не ведётся напрямую.
 
-## Expanding the ESLint configuration
+dev-default
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Ветка по умолчанию.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Содержит баги и недоработки, не является стабильной для продакшна.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Используется как историческая ветка с кодом, где можно посмотреть ранние версии функций.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Основная ветка для разработки.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Все новые задачи (фичи, исправления багов) должны начинаться от этой ветки.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+После завершения и тестирования задач изменения могут сливать в main для стабильного релиза.
+
+Рекомендации по работе с ветками:
+
+Для новой задачи создавайте отдельную ветку от dev:
+
+git checkout dev
+git pull origin dev
+git checkout -b feature/new-task
+
+
+После завершения задачи и тестирования делайте pull request в dev.
